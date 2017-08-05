@@ -1,2 +1,1 @@
-# Simulators
-Basic physics simulators
+# Simple Projectile Motion Simulator
