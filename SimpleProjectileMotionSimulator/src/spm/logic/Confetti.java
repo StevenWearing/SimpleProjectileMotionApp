@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package spm.gui;
+package spm.logic;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -20,7 +20,6 @@ public class Confetti {
     private double vx;
     private double vy;
     private Random rnd;
-    private boolean cone;
     
     public Confetti(double x, double y, double vx, double vy) {
         this.x = x;
@@ -30,20 +29,11 @@ public class Confetti {
         
         rnd = new Random();
         confetti = new ArrayList<ConfettiPiece>();
-        cone = false; // fix this
     }
     
     public void makeConfetti() {
-        if (cone) {
-            double angle = Math.acos(vy / vx);
-            double v = vx*Math.acos(angle) + vy*Math.asin(angle);
-            for (int i = 0; i < 50; i++) {
-                confetti.add(new ConfettiPiece(rnd.nextInt(70) + angle,  (int)v, x, y));
-            }
-        } else {
-            for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 50; i++) {
                 confetti.add(new ConfettiPiece(rnd.nextInt(360),  30, x, y));
-            }
         }
     }
     
@@ -51,10 +41,6 @@ public class Confetti {
         for (ConfettiPiece p : confetti) {
             p.move();
         }
-    }
-    
-    public void setCone(boolean onOff) {
-        this.cone = onOff;
     }
     
     public List<ConfettiPiece> getConfetti() {

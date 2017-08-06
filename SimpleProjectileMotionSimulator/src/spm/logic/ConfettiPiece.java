@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package spm.gui;
+package spm.logic;
 
 /**
  *
@@ -33,13 +33,8 @@ public class ConfettiPiece {
     }
     
     public void move() {
-        
-        
-        //if (y < 655) {
-            moveY();
-            moveX();
-        //}
-        
+        moveY();
+        moveX();
     }
     
     private void moveX() {

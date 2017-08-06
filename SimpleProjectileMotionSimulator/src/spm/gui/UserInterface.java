@@ -27,7 +27,7 @@ public class UserInterface implements Runnable {
     
     @Override
     public void run() {
-        frame = new JFrame("STE");
+        frame = new JFrame("Simple Projectile Motion Simulator");
         frame.setPreferredSize(new Dimension(1300, 700));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         

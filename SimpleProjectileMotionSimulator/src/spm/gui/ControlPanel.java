@@ -34,7 +34,6 @@ public class ControlPanel extends JPanel {
     private ProjectileUpdater pU;
     private JButton party;
     private Color panelColor;
-    private JRadioButton transparant;
     
     public ControlPanel(ProjectileUpdater pU) {
         this.pU = pU;
@@ -87,9 +86,6 @@ public class ControlPanel extends JPanel {
         JLabel colour = new JLabel("Background colour:");
         JPanel colourPanel = colourPanel();
         
-        transparant = new JRadioButton("Transparant projectiles");
-        transparant.setSelected(true);
-        
         p.add(v);
         p.add(vPanel);
         p.add(theta);
@@ -98,7 +94,7 @@ public class ControlPanel extends JPanel {
         p.add(onOffPanel);
         p.add(colour);
         p.add(colourPanel);
-        p.add(transparant);
+        p.add(new JLabel());
         p.add(new JLabel());
         
         return p;
@@ -114,7 +110,6 @@ public class ControlPanel extends JPanel {
         off.addActionListener(cpl);
         fire.addActionListener(cpl);
         party.addActionListener(cpl);
-        transparant.addActionListener(cpl);
     }
     
     private JPanel elastic() {
@@ -222,10 +217,6 @@ public class ControlPanel extends JPanel {
         }
         
         return colourPanel;
-    }
-    
-    public JRadioButton getT() {
-        return transparant;
     }
     
     public JRadioButton getOn() {

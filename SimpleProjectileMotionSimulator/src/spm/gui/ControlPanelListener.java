@@ -5,6 +5,7 @@
  */
 package spm.gui;
 
+import spm.logic.Projectile;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
@@ -30,7 +31,6 @@ public class ControlPanelListener implements ActionListener {
     private ProjectileUpdater pU;
     private ControlPanel cpl;
     private JButton party;
-    private JRadioButton transparant;
     
     private Random rnd = new Random();
     
@@ -47,7 +47,6 @@ public class ControlPanelListener implements ActionListener {
         wallsOn = cpl.getOn();
         wallsOff = cpl.getOff();
         party = cpl.getParty();
-        transparant = cpl.getT();
     }
     
     @Override
@@ -59,7 +58,6 @@ public class ControlPanelListener implements ActionListener {
             Projectile p = new Projectile(Math.toRadians(Integer.parseInt((angle.getText()))),
                                           Integer.parseInt(velocity.getText()));
             
-            p.color(rnd.nextInt(4));
             pU.addProjectile(p);
         }
         
@@ -82,12 +80,6 @@ public class ControlPanelListener implements ActionListener {
             pU.removeProjectiles();
             //pU.getUpdatable().update();  
             pU.getUpdatable().setParty(true);
-        }
-        
-        if (!transparant.isSelected()) {
-            pU.setCollisions(true);
-        } else {
-            pU.setCollisions(false);
         }
     }
 }

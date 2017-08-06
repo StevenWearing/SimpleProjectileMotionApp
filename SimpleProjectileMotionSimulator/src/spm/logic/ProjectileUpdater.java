@@ -6,8 +6,6 @@
 package spm.logic;
 
 import spm.gui.Updatable;
-import spm.gui.Confetti;
-import spm.gui.Projectile;
 import javax.swing.Timer;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -24,7 +22,6 @@ public class ProjectileUpdater extends Timer implements ActionListener {
     private Updatable updatable;
     private boolean walls;
     private boolean party;
-    private boolean collisions;
     private List<Confetti> confettis;
     
     public ProjectileUpdater() {
@@ -35,16 +32,11 @@ public class ProjectileUpdater extends Timer implements ActionListener {
         this.projectiles = new ArrayList<Projectile>();
         this.walls = true;
         this.party = false;
-        this.collisions = false;
         this.confettis = new ArrayList<Confetti>();
     }
     
     @Override
     public void actionPerformed(ActionEvent ae) {
-        if (collisions) {
-            collisionCheck();
-        }
-        
         if (projectiles.isEmpty()) {
             // adding "return;" gives a pause effect for confetti
         } else {
@@ -67,8 +59,6 @@ public class ProjectileUpdater extends Timer implements ActionListener {
             pastWallRemoval();
         }
     }
-    
-    
     
     public void addProjectile(Projectile p) {
         projectiles.add(p);
@@ -122,32 +112,5 @@ public class ProjectileUpdater extends Timer implements ActionListener {
     
     public void removeProjectiles() {
         projectiles.clear();
-    }
-    
-    public void setCollisions(boolean onOff) {
-        this.collisions = onOff;
-    }
-    
-    private void collisionCheck() {
-        for (Projectile p : projectiles) {
-            for (Projectile other : projectiles) {
-                if (p == other) {
-                    continue;
-                }
-                
-                if (Math.abs(p.getX() - other.getX()) <= 5
-                        && Math.abs(p.getY() - other.getY()) <= 5 
-                        && p.getCollision() == false) {
-                    
-                    p.setCollision(other, true);
-                }
-                
-                //if (Math.abs(p.getX() - other.getX()) == 0
-                  //      && Math.abs(p.getY() - other.getY()) == 0
-                    //    && p.getCollision() == false) {
-                //    p.setCollision(other, false);
-                //}
-            }
-        }
     }
 }

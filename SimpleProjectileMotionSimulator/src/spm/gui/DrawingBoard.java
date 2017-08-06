@@ -5,6 +5,9 @@
  */
 package spm.gui;
 
+import spm.logic.ConfettiPiece;
+import spm.logic.Projectile;
+import spm.logic.Confetti;
 import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -26,7 +29,6 @@ public class DrawingBoard extends JPanel implements Updatable{
     private Color blue;
     private Color orange;
     private Color white;
-    private boolean cone;
     
     public DrawingBoard(ProjectileUpdater pU) {
             this.pU = pU;
@@ -36,7 +38,6 @@ public class DrawingBoard extends JPanel implements Updatable{
             this.blue = new Color(150, 150, 220);
             this.orange = new Color(240, 190, 0);
             this.white = new Color(230, 230, 230);
-            this.cone = true;
             
             super.setBackground(blue);
     }
@@ -50,11 +51,7 @@ public class DrawingBoard extends JPanel implements Updatable{
         }
         
         if (party) {
-            if (cone) {
-                anglePaintParty(graphics);
-            } else {
-                paintParty(graphics);
-            }
+            paintParty(graphics);
         }
         
         
@@ -64,16 +61,7 @@ public class DrawingBoard extends JPanel implements Updatable{
         projectiles = pU.getProjectiles();
         
         for (Projectile p : projectiles) {
-            if (p.getColor() == 0) {
-                graphics.setColor(Color.GREEN);
-            } else if (p.getColor() == 1) {
-                graphics.setColor(Color.WHITE);
-            } else if (p.getColor() == 2) {
-                graphics.setColor(Color.PINK);
-            } else {
-                graphics.setColor(Color.BLACK);
-            }
-            //graphics.setColor(Color.BLACK);
+            graphics.setColor(Color.BLACK);
             graphics.fillOval((int)p.getX(), (int)p.getY(), 10, 10);
         }
     }
@@ -82,19 +70,6 @@ public class DrawingBoard extends JPanel implements Updatable{
         confettis = pU.getConfetti();
         
         for (Confetti c : confettis) {
-            List<ConfettiPiece> cfpl = c.getConfetti();
-            for (ConfettiPiece cfp : cfpl) {
-                graphics.setColor(new Color(rnd.nextInt(255), rnd.nextInt(255), rnd.nextInt(255)));
-                graphics.fillRect((int)cfp.getX(), (int)cfp.getY(), 5, 5);
-            }
-        }
-    }
-    
-    private void anglePaintParty(Graphics graphics) {
-        confettis = pU.getConfetti();
-        
-        for (Confetti c : confettis) {
-            c.setCone(true);
             List<ConfettiPiece> cfpl = c.getConfetti();
             for (ConfettiPiece cfp : cfpl) {
                 graphics.setColor(new Color(rnd.nextInt(255), rnd.nextInt(255), rnd.nextInt(255)));
