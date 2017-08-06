@@ -1,1 +1,1 @@
-# WaveTest
+# Simple Projectile Motion Simulator
