@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package simpleprojectilemotionsimulator;
+package spm.gui;
 
 /**
  *
  * @author steven
  */
-public class SimpleProjectileMotionSimulator {
-
-    public static void main(String[] args) {
-        
-    }
-    
+public interface Updatable {
+    void update();
+    void backColour(String colour);
+    void setParty(boolean onOff);
 }
