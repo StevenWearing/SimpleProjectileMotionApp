@@ -53,12 +53,16 @@ public class ControlPanelListener implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == fire) {
             if (velocity.getText().isEmpty() || angle.getText().isEmpty()) {
-                    return;
-                }
-            Projectile p = new Projectile(Math.toRadians(Integer.parseInt((angle.getText()))),
-                                          Integer.parseInt(velocity.getText()));
+                return;
+            }
             
-            pU.addProjectile(p);
+            int a = Integer.parseInt(angle.getText());
+            int v = Integer.parseInt(velocity.getText());
+        
+            if (a >= 0 && a <= 90 && v >= 0) {
+                Projectile p = new Projectile(Math.toRadians(a), v);
+                pU.addProjectile(p);
+            }
         }
         
         if (orange.isSelected()) {
