@@ -23,6 +23,11 @@ import javax.swing.BorderFactory;
 /**
  *
  * @author steven
+ * 
+ * The Control Panel, within which the user
+ * specifies the initial attributes of any
+ * to-be-created particles, along with the
+ * current state of the environment moved within
  */
 public class ControlPanel extends JPanel {
     

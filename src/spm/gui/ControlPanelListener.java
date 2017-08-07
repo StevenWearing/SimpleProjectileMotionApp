@@ -17,6 +17,8 @@ import java.util.Random;
 /**
  *
  * @author steven
+ * 
+ * Action Listener for the Control Panel
  */
 public class ControlPanelListener implements ActionListener {
     
@@ -52,15 +54,15 @@ public class ControlPanelListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == fire) {
-            if (velocity.getText().isEmpty() || angle.getText().isEmpty()) {
+            if (velocity.getText().isEmpty() || angle.getText().isEmpty()) {    //If there is no values to be used, do nothing
                 return;
             }
             
-            int a = Integer.parseInt(angle.getText());
-            int v = Integer.parseInt(velocity.getText());
+            int a = Integer.parseInt(angle.getText());     // Input angle
+            int v = Integer.parseInt(velocity.getText());  // Input velocity
         
-            if (a >= 0 && a <= 90 && v >= 0) {
-                Projectile p = new Projectile(Math.toRadians(a), v);
+            if (a >= 0 && a <= 90 && v >= 0) {                          //If the input would cause unwanted behaviour, do nothing
+                Projectile p = new Projectile(Math.toRadians(a), v);    // else make new projectile with specified values
                 pU.addProjectile(p);
             }
         }
@@ -73,16 +75,16 @@ public class ControlPanelListener implements ActionListener {
             pU.getUpdatable().backColour("white");
         }
         
-        if (wallsOn.isSelected()) {
-            pU.setWalls(true);
-        } else if (wallsOff.isSelected()) {
-            pU.setWalls(false);
+        if (wallsOn.isSelected()) {          //If elastic walls are clicked on
+            pU.setWalls(true);               // makes boundaries for particles
+        } else if (wallsOff.isSelected()) {  ////////If elastic walls are clicked off
+            pU.setWalls(false);              //////// removes boundaries for particles
         }
         
-        if (ae.getSource() == party) {
-            pU.makeConfetti();
-            pU.removeProjectiles();
-            pU.getUpdatable().setParty(true);
+        if (ae.getSource() == party) {  //////////If party is clicked
+            pU.makeConfetti();         //Uses current coordinates and velocities of each particle to
+            pU.removeProjectiles();    // create many Arrays of smaller particles, then removes original particles
+            pU.getUpdatable().setParty(true);  /////Tells Drawing Board to update now existing confetti particles
         }
     }
 }

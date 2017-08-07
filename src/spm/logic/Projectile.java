@@ -8,6 +8,10 @@ package spm.logic;
 /**
  *
  * @author steven
+ * 
+ * Logic for the current state of 
+ * any created particles and their
+ * movement behaviour
  */
 public class Projectile {
     
