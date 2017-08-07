@@ -35,7 +35,7 @@ public class DrawingBoard extends JPanel implements Updatable{
             this.party = false;
             this.rnd = new Random();
             this.projectiles = pU.getProjectiles();
-            this.blue = new Color(150, 150, 220);
+            this.blue = new Color(110, 150, 230);
             this.orange = new Color(240, 190, 0);
             this.white = new Color(230, 230, 230);
             
