@@ -78,7 +78,6 @@ public class ControlPanelListener implements ActionListener {
         if (ae.getSource() == party) {
             pU.makeConfetti();
             pU.removeProjectiles();
-            //pU.getUpdatable().update();  
             pU.getUpdatable().setParty(true);
         }
     }

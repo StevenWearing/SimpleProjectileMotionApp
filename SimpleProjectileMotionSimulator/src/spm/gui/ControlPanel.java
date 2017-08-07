@@ -54,9 +54,6 @@ public class ControlPanel extends JPanel {
         JPanel p = controls();
         p.setBorder(BorderFactory.createRaisedBevelBorder());
         
-        //firePanel.setBorder(BorderFactory.createRaisedBevelBorder());
-        
-        
         add(p);
         
         addActionListeners();
@@ -256,14 +253,9 @@ public class ControlPanel extends JPanel {
         
         firePanel.setBackground(panelColor);
         
-        //pause = new JButton("PAUSE");
-        //unpause = new JButton("UN-PAUSE");
-        //c.gridwidth = 10;
-        
         fire = new JButton("FIRE");
         fire.setPreferredSize(new Dimension(100, 70));
         fire.setBorder(BorderFactory.createRaisedBevelBorder());
-        //c.weightx = 0.0;
         c.gridx = 1;
         c.gridy = 1;
         firePanel.add(fire, c);
@@ -272,7 +264,6 @@ public class ControlPanel extends JPanel {
         party.setForeground(Color.RED);
         party.setPreferredSize(new Dimension(50, 35));
         party.setBorder(BorderFactory.createRaisedBevelBorder());
-        //c.weightx = 0.0;
         c.gridx = 3;
         c.gridy = 1;
         c.insets = new Insets(10, 10, 10, 10);

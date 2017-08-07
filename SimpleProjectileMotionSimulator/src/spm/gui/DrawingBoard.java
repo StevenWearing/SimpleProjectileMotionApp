@@ -53,8 +53,6 @@ public class DrawingBoard extends JPanel implements Updatable{
         if (party) {
             paintParty(graphics);
         }
-        
-        
     }
     
     private void paintProjectiles(Graphics graphics) {
