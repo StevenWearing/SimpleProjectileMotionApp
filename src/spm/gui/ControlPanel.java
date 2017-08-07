@@ -20,6 +20,7 @@ import java.awt.Graphics;
 import spm.logic.ProjectileUpdater;
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
+import java.awt.Font;
 /**
  *
  * @author steven
@@ -259,6 +260,7 @@ public class ControlPanel extends JPanel {
         firePanel.setBackground(panelColor);
         
         fire = new JButton("FIRE");
+        fire.setFont(new Font("Sans-serif", Font.BOLD, 25));
         fire.setPreferredSize(new Dimension(100, 70));
         fire.setBorder(BorderFactory.createRaisedBevelBorder());
         c.gridx = 1;
