@@ -89,7 +89,7 @@ public class ProjectileUpdater extends Timer implements ActionListener {
         
         while (iterator.hasNext()) {
             Projectile p = iterator.next();
-            if (p.getX() < -1 || p.getY() < -1 || p.getY() > 700 || p.getX() > 1100) {
+            if (p.getX() < -1 || p.getY() < -1 || p.getY() > 651 || p.getX() > 1031) {
                 iterator.remove();
             }
         }
