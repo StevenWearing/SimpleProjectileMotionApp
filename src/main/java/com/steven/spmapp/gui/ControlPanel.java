@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.steven.spmapp.gui;
+package main.java.com.steven.spmapp.gui;
 
 import javax.swing.JPanel;
 import javax.swing.JButton;
@@ -17,7 +17,7 @@ import java.awt.Insets;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
-import com.steven.spmapp.logic.ProjectileUpdater;
+import main.java.com.steven.spmapp.logic.ProjectileUpdater;
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
 import java.awt.Font;
@@ -223,6 +223,7 @@ public class ControlPanel extends JPanel {
         
         orange = new JRadioButton("Orange");
         orange.setBackground(panelColor);
+        orange.setSelected(true);
         c.anchor = GridBagConstraints.LINE_START;
         c.weighty = 0.5;
         c.gridx = 0;
@@ -231,7 +232,7 @@ public class ControlPanel extends JPanel {
         
         blue = new JRadioButton("Blue");
         blue.setBackground(panelColor);
-        blue.setSelected(true);
+        
         c.weighty = 0.5;
         c.gridx = 0;
         c.gridy = 1;

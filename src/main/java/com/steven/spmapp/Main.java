@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.steven.spmapp;
+package main.java.com.steven.spmapp;
 
-import com.steven.spmapp.gui.UserInterface;
+import main.java.com.steven.spmapp.gui.UserInterface;
 import javax.swing.SwingUtilities;
-import com.steven.spmapp.logic.ProjectileUpdater;
+import main.java.com.steven.spmapp.logic.ProjectileUpdater;
 /**
  *
  * @author steven

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.steven.spmapp.logic;
+package main.java.com.steven.spmapp.logic;
 
 import java.util.List;
 import java.util.ArrayList;

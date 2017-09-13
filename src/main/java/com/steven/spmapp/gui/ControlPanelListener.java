@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.steven.spmapp.gui;
+package main.java.com.steven.spmapp.gui;
 
-import com.steven.spmapp.logic.Projectile;
+import main.java.com.steven.spmapp.logic.Projectile;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
-import com.steven.spmapp.logic.ProjectileUpdater;
+import main.java.com.steven.spmapp.logic.ProjectileUpdater;
 
 import java.util.Random;
 /**

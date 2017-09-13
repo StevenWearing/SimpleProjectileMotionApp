@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.steven.spmapp.gui;
+package main.java.com.steven.spmapp.gui;
 
-import com.steven.spmapp.logic.ConfettiPiece;
-import com.steven.spmapp.logic.Projectile;
-import com.steven.spmapp.logic.Confetti;
+import main.java.com.steven.spmapp.logic.ConfettiPiece;
+import main.java.com.steven.spmapp.logic.Projectile;
+import main.java.com.steven.spmapp.logic.Confetti;
 import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.List;
-import com.steven.spmapp.logic.ProjectileUpdater;
+import main.java.com.steven.spmapp.logic.ProjectileUpdater;
 import java.util.Random;
 /**
  *
@@ -39,7 +39,7 @@ public class DrawingBoard extends JPanel implements Updatable{
             this.orange = new Color(240, 190, 0);
             this.white = new Color(230, 230, 230);
             
-            super.setBackground(blue);
+            super.setBackground(orange);
     }
     
     @Override 

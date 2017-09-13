@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.steven.spmapp.logic;
+package main.java.com.steven.spmapp.logic;
 
-import com.steven.spmapp.gui.Updatable;
+import main.java.com.steven.spmapp.gui.Updatable;
 import javax.swing.Timer;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;

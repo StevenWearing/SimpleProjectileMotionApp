@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.steven.spmapp.logic;
+package main.java.com.steven.spmapp.logic;
 
 /**
  *
@@ -29,12 +29,12 @@ public class Projectile {
         this.x = 0;
         this.y = 650;
         
-        this.t = 0.1;         // Time interval between each increase of velocity
+        this.t = 0.1;         // Time interval between each change of velocity
         this.a = -10;         // Gravitaional constant
         
         this.vx = initialVelocity*Math.cos(angle);    // Obtaining horizontal velocity component
         this.vy = initialVelocity*Math.sin(angle);    // Obtaining vertical velocity component
-        vyMax = vy;          // Set max velocity to ensure no invalid behaviours
+        vyMax = vy;          // Set max velocity to ensure no buggy behaviours
         
         this.walls = true;
     }
@@ -63,14 +63,6 @@ public class Projectile {
         if (Math.abs(vy) > vyMax) {        // Limit velocity to initial velocity as maximum value
             vy = vyBefore;
         }
-    }
-    
-    public double getX() {
-        return x;
-    }
-    
-    public double getY() {
-        return y;
     }
     
     public void setWalls(boolean onOff) {
@@ -102,5 +94,13 @@ public class Projectile {
     
     public Confetti getConfetti() {
         return confetti;
+    }
+    
+    public double getX() {
+        return x;
+    }
+    
+    public double getY() {
+        return y;
     }
 }
